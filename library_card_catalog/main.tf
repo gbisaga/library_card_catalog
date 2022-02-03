@@ -5,6 +5,11 @@ terraform {
       version = "0.22.0"
     }
   }
+  backend "s3" {
+    bucket = "ps-snowflake"
+    key    = "tfstate/sandbox/gary/library_card_catalog/terraform.tfstate"
+    region = "us-east-1"
+  }
 }
 
 provider "snowflake" {
